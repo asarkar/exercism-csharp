@@ -2,6 +2,20 @@
 
 set -e
 
+while IFS='' read -r -d '' filename; do
+	dir=${filename%/*}
+	dir="${dir##*/}"
+	found=0
+	# This is to prevent grep from prematurely terminating the script.
+	grep -q "$dir" Exercism.slnx || found=$?
+	if (( found > 0 )); then
+		red=$(tput -Txterm-256color setaf 1)
+		default=$(tput -Txterm-256color sgr0)
+		printf "%bProject '%s' is not included in the solution%b\n" "$red" "$dir" "$default"
+		exit 1
+	fi
+done < <(find . -type f -name "*.csproj" -maxdepth 2 -print0)
+
 no_test=0
 no_lint=0
 

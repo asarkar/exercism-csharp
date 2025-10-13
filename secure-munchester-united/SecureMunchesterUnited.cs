@@ -1,17 +1,12 @@
 public class SecurityPassMaker
 {
-    public string GetDisplayName(TeamSupport support)
-    {
-        if (support.GetType() == typeof(Security))
+    public string GetDisplayName(TeamSupport support) =>
+        support switch
         {
-            return "Security Team Member Priority Personnel";
-        }
-        if (support is Staff)
-        {
-            return support.Title;
-        }
-        return "Too Important for a Security Pass";
-    }
+            Security s when s.GetType() == typeof(Security) => "Security Team Member Priority Personnel",
+            Staff => support.Title,
+            _ => "Too Important for a Security Pass"
+        };
 }
 
 /**** Please do not alter the code below ****/

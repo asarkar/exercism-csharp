@@ -2,14 +2,35 @@
   <Folder Name="/annalyns-infiltration/">
     <Project Path="annalyns-infiltration/AnnalynsInfiltration.csproj" />
   </Folder>
+  <Folder Name="/authentication-system/">
+    <Project Path="authentication-system/AuthenticationSystem.csproj" />
+  </Folder>
   <Folder Name="/bird-watcher/">
     <Project Path="bird-watcher/BirdWatcher.csproj" />
+  </Folder>
+  <Folder Name="/booking-up-for-beauty/">
+    <Project Path="booking-up-for-beauty/BookingUpForBeauty.csproj" />
+  </Folder>
+  <Folder Name="/faceid-2/">
+    <Project Path="faceid-2/Faceid2.csproj" />
   </Folder>
   <Folder Name="/hello-world/">
     <Project Path="hello-world/HelloWorld.csproj" />
   </Folder>
+  <Folder Name="/international-calling-connoisseur/">
+    <Project Path="international-calling-connoisseur/InternationalCallingConnoisseur.csproj" />
+  </Folder>
+  <Folder Name="/jedliks-toys/">
+    <Project Path="jedliks-toys/JedliksToys.csproj" />
+  </Folder>
+  <Folder Name="/logs-logs-logs/">
+    <Project Path="logs-logs-logs/LogsLogsLogs.csproj" />
+  </Folder>
   <Folder Name="/lucians-luscious-lasagna/">
     <Project Path="lucians-luscious-lasagna/LuciansLusciousLasagna.csproj" />
+  </Folder>
+  <Folder Name="/need-for-speed/">
+    <Project Path="need-for-speed/NeedForSpeed.csproj" />
   </Folder>
   <Folder Name="/secure-munchester-united/">
     <Project Path="secure-munchester-united/SecureMunchesterUnited.csproj" />
