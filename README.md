@@ -3,6 +3,11 @@ Feel free to open issues for questions, comments, or suggestions.
 
 [![](https://github.com/asarkar/exercism-csharp/workflows/CI/badge.svg)](https://github.com/asarkar/exercism-csharp/actions)
 
+## Adding projects to solution
+```
+dotnet sln add <directory>
+```
+
 ## Running tests
 ```
 ./.github/run.sh <directory>

@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/annalyns-infiltration/">
+    <Project Path="annalyns-infiltration/AnnalynsInfiltration.csproj" />
+  </Folder>
+  <Folder Name="/bird-watcher/">
+    <Project Path="bird-watcher/BirdWatcher.csproj" />
+  </Folder>
+  <Folder Name="/hello-world/">
+    <Project Path="hello-world/HelloWorld.csproj" />
+  </Folder>
+  <Folder Name="/lucians-luscious-lasagna/">
+    <Project Path="lucians-luscious-lasagna/LuciansLusciousLasagna.csproj" />
+  </Folder>
+  <Folder Name="/secure-munchester-united/">
+    <Project Path="secure-munchester-united/SecureMunchesterUnited.csproj" />
+  </Folder>
+  <Folder Name="/squeaky-clean/">
+    <Project Path="squeaky-clean/SqueakyClean.csproj" />
+  </Folder>
+</Solution>
