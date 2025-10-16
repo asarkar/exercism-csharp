@@ -31,17 +31,15 @@ public static class DialingCodes
     public static Dictionary<int, string> UpdateDictionary(
         Dictionary<int, string> existingDictionary, int countryCode, string countryName)
     {
-        if (CheckCodeExists(existingDictionary, countryCode))
-        {
-            return AddCountryToExistingDictionary(existingDictionary, countryCode, countryName);
-        }
-        return existingDictionary;
+        return CheckCodeExists(existingDictionary, countryCode)
+            ? AddCountryToExistingDictionary(existingDictionary, countryCode, countryName)
+            : existingDictionary;
     }
 
     public static Dictionary<int, string> RemoveCountryFromDictionary(
         Dictionary<int, string> existingDictionary, int countryCode)
     {
-        existingDictionary.Remove(countryCode);
+        _ = existingDictionary.Remove(countryCode);
         return existingDictionary;
     }
 

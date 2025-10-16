@@ -1,12 +1,12 @@
-using Exercism.Tests;
-
 using System.Globalization;
+
+using Exercism.Tests;
 
 public class BookingUpForBeautyTests
 {
     public BookingUpForBeautyTests()
     {
-        var enUsCulture = CultureInfo.GetCultureInfo("en-US");
+        CultureInfo enUsCulture = CultureInfo.GetCultureInfo("en-US");
         Thread.CurrentThread.CurrentCulture = enUsCulture;
         Thread.CurrentThread.CurrentUICulture = enUsCulture;
     }

@@ -1,4 +1,4 @@
-enum LogLevel
+internal enum LogLevel
 {
     Unknown = 0,
     Trace = 1,
@@ -9,9 +9,9 @@ enum LogLevel
     Fatal = 42
 }
 
-static class LogLine
+internal static class LogLine
 {
-    private static readonly Dictionary<string, LogLevel> string2LogLevel = new()
+    private static readonly Dictionary<string, LogLevel> String2LogLevel = new()
     {
         {"TRC", LogLevel.Trace},
         {"DBG", LogLevel.Debug},
@@ -21,7 +21,7 @@ static class LogLine
         {"FTL", LogLevel.Fatal}
     };
     public static LogLevel ParseLogLevel(string logLine) =>
-        logLine.Length < 4 ? LogLevel.Unknown : string2LogLevel.GetValueOrDefault(logLine[1..4], LogLevel.Unknown);
+        logLine.Length < 4 ? LogLevel.Unknown : String2LogLevel.GetValueOrDefault(logLine[1..4], LogLevel.Unknown);
 
     public static string OutputForShortLog(LogLevel logLevel, string message) =>
         $"{(int)logLevel}:{message}";

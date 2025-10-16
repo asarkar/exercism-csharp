@@ -1,24 +1,24 @@
-class RemoteControlCar
+internal sealed class RemoteControlCar
 {
-    private int battery;
-    private int distance;
+    private int _battery;
+    private int _distance;
 
     public RemoteControlCar()
     {
-        battery = 100;
-        distance = 0;
+        _battery = 100;
+        _distance = 0;
     }
     public static RemoteControlCar Buy() => new();
 
-    public string DistanceDisplay() => $"Driven {distance} meters";
+    public string DistanceDisplay() => $"Driven {_distance} meters";
 
-    public string BatteryDisplay() => battery > 0 ? $"Battery at {battery}%" : "Battery empty";
+    public string BatteryDisplay() => _battery > 0 ? $"Battery at {_battery}%" : "Battery empty";
 
     public void Drive()
     {
-        if (battery-- > 0)
+        if (_battery-- > 0)
         {
-            distance += 20;
+            _distance += 20;
         }
     }
 }

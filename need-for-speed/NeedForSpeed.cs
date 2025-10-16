@@ -1,25 +1,25 @@
-class RemoteControlCar(int speed, int batteryDrain)
+internal sealed class RemoteControlCar(int speed, int batteryDrain)
 {
-    private int distance;
-    private int batteryRemaining = 100;
+    private int _distance;
+    private int _batteryRemaining = 100;
 
-    public bool BatteryDrained() => batteryRemaining < batteryDrain;
+    public bool BatteryDrained() => _batteryRemaining < batteryDrain;
 
-    public int DistanceDriven() => distance;
+    public int DistanceDriven() => _distance;
 
     public void Drive()
     {
         if (!BatteryDrained())
         {
-            distance += speed;
-            batteryRemaining -= batteryDrain;
+            _distance += speed;
+            _batteryRemaining -= batteryDrain;
         }
     }
 
     public static RemoteControlCar Nitro() => new(50, 4);
 }
 
-class RaceTrack(int distance)
+internal sealed class RaceTrack(int distance)
 {
     public bool TryFinishTrack(RemoteControlCar car)
     {

@@ -1,4 +1,4 @@
-public static class HelloWorld
+internal static class HelloWorld
 {
     public static string Hello() => "Hello, World!";
 }

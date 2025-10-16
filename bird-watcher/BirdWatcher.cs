@@ -1,24 +1,19 @@
-class BirdCount
+internal sealed class BirdCount(int[] birdsPerDay)
 {
-    private int[] birdsPerDay;
-
-    public BirdCount(int[] birdsPerDay)
-    {
-        this.birdsPerDay = birdsPerDay;
-    }
+    private readonly int[] _birdsPerDay = birdsPerDay;
 
     public static int[] LastWeek() => [0, 2, 5, 3, 7, 8, 4];
 
-    public int Today() => birdsPerDay[^1];
+    public int Today() => _birdsPerDay[^1];
 
     public void IncrementTodaysCount()
     {
-        birdsPerDay[^1]++;
+        _birdsPerDay[^1]++;
     }
 
-    public bool HasDayWithoutBirds() => birdsPerDay.Any(cnt => cnt == 0);
+    public bool HasDayWithoutBirds() => _birdsPerDay.Any(cnt => cnt == 0);
 
-    public int CountForFirstDays(int numberOfDays) => birdsPerDay[..numberOfDays].Sum();
+    public int CountForFirstDays(int numberOfDays) => _birdsPerDay[..numberOfDays].Sum();
 
-    public int BusyDays() => birdsPerDay.Where(cnt => cnt >= 5).Count();
+    public int BusyDays() => _birdsPerDay.Count(cnt => cnt >= 5);
 }

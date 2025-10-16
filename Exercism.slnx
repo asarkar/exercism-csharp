@@ -2,6 +2,9 @@
   <Folder Name="/annalyns-infiltration/">
     <Project Path="annalyns-infiltration/AnnalynsInfiltration.csproj" />
   </Folder>
+  <Folder Name="/attack-of-the-trolls/">
+    <Project Path="attack-of-the-trolls/AttackOfTheTrolls.csproj" />
+  </Folder>
   <Folder Name="/authentication-system/">
     <Project Path="authentication-system/AuthenticationSystem.csproj" />
   </Folder>
@@ -11,11 +14,17 @@
   <Folder Name="/booking-up-for-beauty/">
     <Project Path="booking-up-for-beauty/BookingUpForBeauty.csproj" />
   </Folder>
+  <Folder Name="/calculator-conundrum/">
+    <Project Path="calculator-conundrum/CalculatorConundrum.csproj" />
+  </Folder>
   <Folder Name="/faceid-2/">
     <Project Path="faceid-2/Faceid2.csproj" />
   </Folder>
   <Folder Name="/hello-world/">
     <Project Path="hello-world/HelloWorld.csproj" />
+  </Folder>
+  <Folder Name="/interest-is-interesting/">
+    <Project Path="interest-is-interesting/InterestIsInteresting.csproj" />
   </Folder>
   <Folder Name="/international-calling-connoisseur/">
     <Project Path="international-calling-connoisseur/InternationalCallingConnoisseur.csproj" />
@@ -37,5 +46,8 @@
   </Folder>
   <Folder Name="/squeaky-clean/">
     <Project Path="squeaky-clean/SqueakyClean.csproj" />
+  </Folder>
+  <Folder Name="/the-weather-in-deather/">
+    <Project Path="the-weather-in-deather/TheWeatherInDeather.csproj" />
   </Folder>
 </Solution>

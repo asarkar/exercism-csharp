@@ -12,7 +12,7 @@ public class Identity(string email, FacialFeatures facialFeatures)
             return false;
         }
 
-        Identity other = (Identity)obj;
+        var other = (Identity)obj;
         return Email == other.Email && FacialFeatures == other.FacialFeatures;
     }
 
@@ -24,16 +24,16 @@ public class Identity(string email, FacialFeatures facialFeatures)
 
 public class Authenticator
 {
-    private readonly HashSet<Identity> identities = new HashSet<Identity>();
-    private readonly Identity admin = new("admin@exerc.ism", new FacialFeatures("green", 0.9m));
+    private readonly HashSet<Identity> _identities = [];
+    private readonly Identity _admin = new("admin@exerc.ism", new FacialFeatures("green", 0.9m));
     public static bool AreSameFace(FacialFeatures faceA, FacialFeatures faceB) => faceA == faceB;
 
-    public bool IsAdmin(Identity identity) => identity.Equals(admin);
+    public bool IsAdmin(Identity identity) => identity.Equals(_admin);
 
-    public bool Register(Identity identity) => identities.Add(identity);
+    public bool Register(Identity identity) => _identities.Add(identity);
 
-    public bool IsRegistered(Identity identity) => identities.Contains(identity);
+    public bool IsRegistered(Identity identity) => _identities.Contains(identity);
 
     public static bool AreSameObject(Identity identityA, Identity identityB) =>
-        Object.ReferenceEquals(identityA, identityB);
+        ReferenceEquals(identityA, identityB);
 }

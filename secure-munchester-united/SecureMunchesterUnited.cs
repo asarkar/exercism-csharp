@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 public class SecurityPassMaker
 {
+    [SuppressMessage("Performance", "CA1822: Mark members as static")]
     public string GetDisplayName(TeamSupport support) =>
         support switch
         {
@@ -11,6 +14,8 @@ public class SecurityPassMaker
 
 /**** Please do not alter the code below ****/
 
+[SuppressMessage("Style", "IDE1006:Naming rule violation")]
+[SuppressMessage("Naming", "CA1715:Identifiers should have correct prefix")]
 public interface TeamSupport { string Title { get; } }
 
 public abstract class Staff : TeamSupport { public abstract string Title { get; } }

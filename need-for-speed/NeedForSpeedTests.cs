@@ -8,7 +8,7 @@ public class NeedForSpeedTests
     {
         int speed = 10;
         int batteryDrain = 2;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         Assert.Equal(0, car.DistanceDriven());
     }
@@ -19,7 +19,7 @@ public class NeedForSpeedTests
     {
         int speed = 5;
         int batteryDrain = 1;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         car.Drive();
 
@@ -32,7 +32,7 @@ public class NeedForSpeedTests
     {
         int speed = 9;
         int batteryDrain = 50;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         // Drain the battery
         car.Drive();
@@ -50,7 +50,7 @@ public class NeedForSpeedTests
     {
         int speed = 15;
         int batteryDrain = 3;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         Assert.False(car.BatteryDrained());
     }
@@ -61,10 +61,10 @@ public class NeedForSpeedTests
     {
         int speed = 2;
         int batteryDrain = 1;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         // Almost drain the battery
-        for (var i = 0; i < 99; i++)
+        for (int i = 0; i < 99; i++)
         {
             car.Drive();
         }
@@ -78,10 +78,10 @@ public class NeedForSpeedTests
     {
         int speed = 2;
         int batteryDrain = 1;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         // Drain the battery
-        for (var i = 0; i < 100; i++)
+        for (int i = 0; i < 100; i++)
         {
             car.Drive();
         }
@@ -95,7 +95,7 @@ public class NeedForSpeedTests
     {
         int speed = 100;
         int batteryDrain = 60;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
         car.Drive();
         Assert.True(car.BatteryDrained());
     }
@@ -106,7 +106,7 @@ public class NeedForSpeedTests
     {
         int speed = 100;
         int batteryDrain = 60;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
         car.Drive();
         car.Drive();
         Assert.True(car.BatteryDrained());
@@ -117,7 +117,7 @@ public class NeedForSpeedTests
     [Task(5)]
     public void Nitro_car_has_not_driven_any_distance()
     {
-        var car = RemoteControlCar.Nitro();
+        RemoteControlCar car = RemoteControlCar.Nitro();
         Assert.Equal(0, car.DistanceDriven());
     }
 
@@ -125,7 +125,7 @@ public class NeedForSpeedTests
     [Task(5)]
     public void Nitro_car_has_battery_not_drained()
     {
-        var car = RemoteControlCar.Nitro();
+        RemoteControlCar car = RemoteControlCar.Nitro();
         Assert.False(car.BatteryDrained());
     }
 
@@ -133,7 +133,7 @@ public class NeedForSpeedTests
     [Task(5)]
     public void Nitro_car_has_correct_speed()
     {
-        var car = RemoteControlCar.Nitro();
+        RemoteControlCar car = RemoteControlCar.Nitro();
         car.Drive();
         Assert.Equal(50, car.DistanceDriven());
     }
@@ -142,10 +142,10 @@ public class NeedForSpeedTests
     [Task(5)]
     public void Nitro_car_has_correct_battery_drain()
     {
-        var car = RemoteControlCar.Nitro();
+        RemoteControlCar car = RemoteControlCar.Nitro();
 
         // The battery is almost drained
-        for (var i = 0; i < 24; i++)
+        for (int i = 0; i < 24; i++)
         {
             car.Drive();
         }
@@ -164,10 +164,10 @@ public class NeedForSpeedTests
     {
         int speed = 10;
         int batteryDrain = 2;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         int distance = 100;
-        var race = new RaceTrack(distance);
+        RaceTrack race = new(distance);
 
         Assert.True(race.TryFinishTrack(car));
     }
@@ -178,10 +178,10 @@ public class NeedForSpeedTests
     {
         int speed = 2;
         int batteryDrain = 10;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         int distance = 20;
-        var race = new RaceTrack(distance);
+        RaceTrack race = new(distance);
 
         Assert.True(race.TryFinishTrack(car));
     }
@@ -192,10 +192,10 @@ public class NeedForSpeedTests
     {
         int speed = 3;
         int batteryDrain = 20;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         int distance = 16;
-        var race = new RaceTrack(distance);
+        RaceTrack race = new(distance);
 
         Assert.False(race.TryFinishTrack(car));
     }
@@ -206,10 +206,10 @@ public class NeedForSpeedTests
     {
         int speed = 1;
         int batteryDrain = 20;
-        var car = new RemoteControlCar(speed, batteryDrain);
+        RemoteControlCar car = new(speed, batteryDrain);
 
         int distance = 678;
-        var race = new RaceTrack(distance);
+        RaceTrack race = new(distance);
 
         Assert.False(race.TryFinishTrack(car));
     }

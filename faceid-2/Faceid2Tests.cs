@@ -22,7 +22,7 @@ public class Faceid2Tests
     [Task(2)]
     public void IsAdmin_with_admin()
     {
-        var authenticator = new Authenticator();
+        Authenticator authenticator = new();
         Assert.True(authenticator.IsAdmin(new Identity("admin@exerc.ism", new FacialFeatures("green", 0.9m))));
     }
 
@@ -30,7 +30,7 @@ public class Faceid2Tests
     [Task(2)]
     public void IsAdmin_with_wrong_email()
     {
-        var authenticator = new Authenticator();
+        Authenticator authenticator = new();
         Assert.False(authenticator.IsAdmin(new Identity("admin@thecompetition.com", new FacialFeatures("green", 0.9m))));
     }
 
@@ -38,7 +38,7 @@ public class Faceid2Tests
     [Task(2)]
     public void IsAdmin_with_wrong_face()
     {
-        var authenticator = new Authenticator();
+        Authenticator authenticator = new();
         Assert.False(authenticator.IsAdmin(new Identity("admin@exerc.ism", new FacialFeatures("blue", 0.9m))));
     }
 
@@ -46,7 +46,7 @@ public class Faceid2Tests
     [Task(3)]
     public void Register_new_identity()
     {
-        var authenticator = new Authenticator();
+        Authenticator authenticator = new();
         Assert.True(authenticator.Register(new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m))));
     }
 
@@ -54,8 +54,8 @@ public class Faceid2Tests
     [Task(3)]
     public void Register_existing_identity()
     {
-        var authenticator = new Authenticator();
-        authenticator.Register(new Identity("tunde@thecompetition.com", new FacialFeatures("blue", 0.9m)));
+        Authenticator authenticator = new();
+        _ = authenticator.Register(new Identity("tunde@thecompetition.com", new FacialFeatures("blue", 0.9m)));
         Assert.False(authenticator.Register(new Identity("tunde@thecompetition.com", new FacialFeatures("blue", 0.9m))));
     }
 
@@ -63,8 +63,8 @@ public class Faceid2Tests
     [Task(3)]
     public void IsRegistered_existing_identity()
     {
-        var authenticator = new Authenticator();
-        authenticator.Register(new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m)));
+        Authenticator authenticator = new();
+        _ = authenticator.Register(new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m)));
         Assert.True(authenticator.IsRegistered(new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m))));
     }
 
@@ -72,8 +72,8 @@ public class Faceid2Tests
     [Task(4)]
     public void IsRegistered_non_existent_identity()
     {
-        var authenticator = new Authenticator();
-        authenticator.Register(new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m)));
+        Authenticator authenticator = new();
+        _ = authenticator.Register(new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m)));
         Assert.False(authenticator.IsRegistered(new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.8m))));
     }
 
@@ -81,7 +81,7 @@ public class Faceid2Tests
     [Task(5)]
     public void AreSameObject_same_objects()
     {
-        var identityA = new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m));
+        Identity identityA = new("alice@thecompetition.com", new FacialFeatures("blue", 0.9m));
         Assert.True(Authenticator.AreSameObject(identityA, identityA));
     }
 
@@ -89,8 +89,8 @@ public class Faceid2Tests
     [Task(5)]
     public void AreSameObject_different_objects()
     {
-        var identityA = new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m));
-        var identityB = new Identity("alice@thecompetition.com", new FacialFeatures("blue", 0.9m));
+        Identity identityA = new("alice@thecompetition.com", new FacialFeatures("blue", 0.9m));
+        Identity identityB = new("alice@thecompetition.com", new FacialFeatures("blue", 0.9m));
         Assert.False(Authenticator.AreSameObject(identityA, identityB));
     }
 

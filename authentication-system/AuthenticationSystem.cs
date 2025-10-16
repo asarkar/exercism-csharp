@@ -1,6 +1,6 @@
 public class Authenticator(Identity admin)
 {
-    private readonly IDictionary<string, Identity> developers
+    private readonly IDictionary<string, Identity> _developers
         = new Dictionary<string, Identity>
         {
             ["Bertrand"] = new Identity
@@ -20,7 +20,7 @@ public class Authenticator(Identity admin)
 
     public IDictionary<string, Identity> GetDevelopers()
     {
-        return developers;
+        return _developers;
     }
 }
 

@@ -1,30 +1,35 @@
+using System.Globalization;
+
 public static class Identifier
 {
+    private static readonly CultureInfo Culture = CultureInfo.CreateSpecificCulture("en-US");
     public static string Clean(string identifier)
     {
         var buf = new System.Text.StringBuilder();
-        for (int i = 0; i < identifier.Length; i++)
+        for (var i = 0; i < identifier.Length; i++)
         {
             var c = identifier[i];
-            if (Char.IsWhiteSpace(c))
+            if (char.IsWhiteSpace(c))
             {
-                buf.Append('_');
+                _ = buf.Append('_');
             }
-            else if (Char.IsControl(c))
+            else if (char.IsControl(c))
             {
-                buf.Append("CTRL");
+                _ = buf.Append("CTRL");
             }
-            else if (!Char.IsLetter(c) || IsGreekLetter(c))
+            else if (!char.IsLetter(c) || IsGreekLetter(c))
             {
                 continue;
             }
+#pragma warning disable IDE0045
             else if (i > 0 && identifier[i - 1] == '-')
             {
-                buf.Append(Char.ToUpper(c));
+                _ = buf.Append(char.ToUpper(c, Culture));
             }
+#pragma warning restore IDE0045
             else
             {
-                buf.Append(c);
+                _ = buf.Append(c);
             }
         }
         return buf.ToString();

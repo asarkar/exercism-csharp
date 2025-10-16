@@ -6,7 +6,7 @@ public class JedliksToysTests
     [Task(1)]
     public void Buy_new_car_returns_instance()
     {
-        var car = RemoteControlCar.Buy();
+        RemoteControlCar car = RemoteControlCar.Buy();
         Assert.NotNull(car);
     }
 
@@ -14,8 +14,8 @@ public class JedliksToysTests
     [Task(1)]
     public void Buy_new_car_returns_new_car_each_time()
     {
-        var car1 = RemoteControlCar.Buy();
-        var car2 = RemoteControlCar.Buy();
+        RemoteControlCar car1 = RemoteControlCar.Buy();
+        RemoteControlCar car2 = RemoteControlCar.Buy();
         Assert.NotSame(car2, car1);
     }
 
@@ -23,7 +23,7 @@ public class JedliksToysTests
     [Task(2)]
     public void New_car_distance_display()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
         Assert.Equal("Driven 0 meters", car.DistanceDisplay());
     }
 
@@ -31,7 +31,7 @@ public class JedliksToysTests
     [Task(3)]
     public void New_car_battery_display()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
         Assert.Equal("Battery at 100%", car.BatteryDisplay());
     }
 
@@ -39,7 +39,7 @@ public class JedliksToysTests
     [Task(4)]
     public void Distance_display_after_driving_once()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
         car.Drive();
         Assert.Equal("Driven 20 meters", car.DistanceDisplay());
     }
@@ -48,9 +48,9 @@ public class JedliksToysTests
     [Task(4)]
     public void Distance_display_after_driving_multiple_times()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
 
-        for (var i = 0; i < 17; i++)
+        for (int i = 0; i < 17; i++)
         {
             car.Drive();
         }
@@ -62,7 +62,7 @@ public class JedliksToysTests
     [Task(5)]
     public void Battery_display_after_driving_once()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
         car.Drive();
         Assert.Equal("Battery at 99%", car.BatteryDisplay());
     }
@@ -71,9 +71,9 @@ public class JedliksToysTests
     [Task(5)]
     public void Battery_display_after_driving_multiple_times()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
 
-        for (var i = 0; i < 23; i++)
+        for (int i = 0; i < 23; i++)
         {
             car.Drive();
         }
@@ -85,10 +85,10 @@ public class JedliksToysTests
     [Task(6)]
     public void Battery_display_when_battery_empty()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
 
         // Drain the battery
-        for (var i = 0; i < 100; i++)
+        for (int i = 0; i < 100; i++)
         {
             car.Drive();
         }
@@ -103,10 +103,10 @@ public class JedliksToysTests
     [Task(6)]
     public void Distance_display_when_battery_empty()
     {
-        var car = new RemoteControlCar();
+        RemoteControlCar car = new();
 
         // Drain the battery
-        for (var i = 0; i < 100; i++)
+        for (int i = 0; i < 100; i++)
         {
             car.Drive();
         }

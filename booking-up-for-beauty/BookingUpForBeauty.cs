@@ -1,6 +1,6 @@
 using System.Globalization;
 
-static class Appointment
+internal static class Appointment
 {
     private static readonly CultureInfo Culture = CultureInfo.CreateSpecificCulture("en-US");
     public static DateTime Schedule(string appointmentDateDescription) =>
@@ -12,7 +12,7 @@ static class Appointment
     public static bool IsAfternoonAppointment(DateTime appointmentDate)
     {
         var hr = appointmentDate.Hour;
-        return hr >= 12 && hr < 18;
+        return hr is >= 12 and < 18;
     }
 
     public static string Description(DateTime appointmentDate) =>
