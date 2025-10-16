@@ -23,6 +23,9 @@
   <Folder Name="/hello-world/">
     <Project Path="hello-world/HelloWorld.csproj" />
   </Folder>
+  <Folder Name="/hyper-optimized-telemetry/">
+    <Project Path="hyper-optimized-telemetry/HyperOptimizedTelemetry.csproj" />
+  </Folder>
   <Folder Name="/interest-is-interesting/">
     <Project Path="interest-is-interesting/InterestIsInteresting.csproj" />
   </Folder>
@@ -41,6 +44,9 @@
   <Folder Name="/need-for-speed/">
     <Project Path="need-for-speed/NeedForSpeed.csproj" />
   </Folder>
+  <Folder Name="/remote-control-competition/">
+    <Project Path="remote-control-competition/RemoteControlCompetition.csproj" />
+  </Folder>
   <Folder Name="/secure-munchester-united/">
     <Project Path="secure-munchester-united/SecureMunchesterUnited.csproj" />
   </Folder>
@@ -49,5 +55,8 @@
   </Folder>
   <Folder Name="/the-weather-in-deather/">
     <Project Path="the-weather-in-deather/TheWeatherInDeather.csproj" />
+  </Folder>
+  <Folder Name="/wizards-and-warriors/">
+    <Project Path="wizards-and-warriors/WizardsAndWarriors.csproj" />
   </Folder>
 </Solution>
