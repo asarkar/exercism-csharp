@@ -8,23 +8,50 @@
   <Folder Name="/authentication-system/">
     <Project Path="authentication-system/AuthenticationSystem.csproj" />
   </Folder>
+  <Folder Name="/beauty-salon-goes-global/">
+    <Project Path="beauty-salon-goes-global/BeautySalonGoesGlobal.csproj" />
+  </Folder>
   <Folder Name="/bird-watcher/">
     <Project Path="bird-watcher/BirdWatcher.csproj" />
   </Folder>
   <Folder Name="/booking-up-for-beauty/">
     <Project Path="booking-up-for-beauty/BookingUpForBeauty.csproj" />
   </Folder>
+  <Folder Name="/building-telemetry/">
+    <Project Path="building-telemetry/BuildingTelemetry.csproj" />
+  </Folder>
   <Folder Name="/calculator-conundrum/">
     <Project Path="calculator-conundrum/CalculatorConundrum.csproj" />
+  </Folder>
+  <Folder Name="/cars-assemble/">
+    <Project Path="cars-assemble/CarsAssemble.csproj" />
+  </Folder>
+  <Folder Name="/developer-privileges/">
+    <Project Path="developer-privileges/DeveloperPrivileges.csproj" />
   </Folder>
   <Folder Name="/faceid-2/">
     <Project Path="faceid-2/Faceid2.csproj" />
   </Folder>
+  <Folder Name="/football-match-reports/">
+    <Project Path="football-match-reports/FootballMatchReports.csproj" />
+  </Folder>
   <Folder Name="/hello-world/">
     <Project Path="hello-world/HelloWorld.csproj" />
   </Folder>
+  <Folder Name="/high-school-sweethearts/">
+    <Project Path="high-school-sweethearts/HighSchoolSweethearts.csproj" />
+  </Folder>
   <Folder Name="/hyper-optimized-telemetry/">
     <Project Path="hyper-optimized-telemetry/HyperOptimizedTelemetry.csproj" />
+  </Folder>
+  <Folder Name="/hyperia-forex/">
+    <Project Path="hyperia-forex/HyperiaForex.csproj" />
+  </Folder>
+  <Folder Name="/hyperinflation-hits-hyperia/">
+    <Project Path="hyperinflation-hits-hyperia/HyperinflationHitsHyperia.csproj" />
+  </Folder>
+  <Folder Name="/instruments-of-texas/">
+    <Project Path="instruments-of-texas/InstrumentsOfTexas.csproj" />
   </Folder>
   <Folder Name="/interest-is-interesting/">
     <Project Path="interest-is-interesting/InterestIsInteresting.csproj" />
@@ -35,6 +62,15 @@
   <Folder Name="/jedliks-toys/">
     <Project Path="jedliks-toys/JedliksToys.csproj" />
   </Folder>
+  <Folder Name="/land-grab-in-space/">
+    <Project Path="land-grab-in-space/LandGrabInSpace.csproj" />
+  </Folder>
+  <Folder Name="/log-analysis/">
+    <Project Path="log-analysis/LogAnalysis.csproj" />
+  </Folder>
+  <Folder Name="/log-levels/">
+    <Project Path="log-levels/LogLevels.csproj" />
+  </Folder>
   <Folder Name="/logs-logs-logs/">
     <Project Path="logs-logs-logs/LogsLogsLogs.csproj" />
   </Folder>
@@ -44,8 +80,29 @@
   <Folder Name="/need-for-speed/">
     <Project Path="need-for-speed/NeedForSpeed.csproj" />
   </Folder>
+  <Folder Name="/object-relational-mapping/">
+    <Project Path="object-relational-mapping/ObjectRelationalMapping.csproj" />
+  </Folder>
+  <Folder Name="/orm-in-one-go/">
+    <Project Path="orm-in-one-go/OrmInOneGo.csproj" />
+  </Folder>
+  <Folder Name="/parsing-log-files/">
+    <Project Path="parsing-log-files/ParsingLogFiles.csproj" />
+  </Folder>
+  <Folder Name="/phone-number-analysis/">
+    <Project Path="phone-number-analysis/PhoneNumberAnalysis.csproj" />
+  </Folder>
+  <Folder Name="/red-vs-blue-darwin-style/">
+    <Project Path="red-vs-blue-darwin-style/RedVsBlueDarwinStyle.csproj" />
+  </Folder>
+  <Folder Name="/remote-control-cleanup/">
+    <Project Path="remote-control-cleanup/RemoteControlCleanup.csproj" />
+  </Folder>
   <Folder Name="/remote-control-competition/">
     <Project Path="remote-control-competition/RemoteControlCompetition.csproj" />
+  </Folder>
+  <Folder Name="/roll-the-die/">
+    <Project Path="roll-the-die/RollTheDie.csproj" />
   </Folder>
   <Folder Name="/secure-munchester-united/">
     <Project Path="secure-munchester-united/SecureMunchesterUnited.csproj" />
@@ -55,6 +112,18 @@
   </Folder>
   <Folder Name="/the-weather-in-deather/">
     <Project Path="the-weather-in-deather/TheWeatherInDeather.csproj" />
+  </Folder>
+  <Folder Name="/tim-from-marketing/">
+    <Project Path="tim-from-marketing/TimFromMarketing.csproj" />
+  </Folder>
+  <Folder Name="/tracks-on-tracks-on-tracks/">
+    <Project Path="tracks-on-tracks-on-tracks/TracksOnTracksOnTracks.csproj" />
+  </Folder>
+  <Folder Name="/weighing-machine/">
+    <Project Path="weighing-machine/WeighingMachine.csproj" />
+  </Folder>
+  <Folder Name="/wizards-and-warriors-2/">
+    <Project Path="wizards-and-warriors-2/WizardsAndWarriors2.csproj" />
   </Folder>
   <Folder Name="/wizards-and-warriors/">
     <Project Path="wizards-and-warriors/WizardsAndWarriors.csproj" />
