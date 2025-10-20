@@ -2,16 +2,17 @@
 
 set -e
 
-while IFS='' read -r -d '' filename; do
-	dir=${filename%/*}
+# Verify that all projects are included in the solution.
+while IFS='' read -r -d '' project; do
+	dir=${project%/*}
 	dir="${dir##*/}"
 	found=0
-	# This is to prevent grep from prematurely terminating the script.
+	# Prevent `grep` from prematurely terminating the script.
 	grep -q "$dir" Exercism.slnx || found=$?
 	if (( found > 0 )); then
+		default_color=$(tput -Txterm-256color sgr0)
 		red=$(tput -Txterm-256color setaf 1)
-		default=$(tput -Txterm-256color sgr0)
-		printf "%bProject '%s' is not included in the solution%b\n" "$red" "$dir" "$default"
+		printf "%bProject '%s' is not included in the solution%b\n" "$red" "$dir" "$default_color"
 		exit 1
 	fi
 done < <(find . -type f -name "*.csproj" -maxdepth 2 -print0)
@@ -45,14 +46,29 @@ done
 
 basedir="${1:-.}"
 
+if [[ -n "$1" && -z "$CI" ]]; then
+	# Delete project-specific `.editorconfig` files.
+	find "$basedir" -type f -name '.editorconfig' -mindepth 2 -maxdepth 2 -exec rm -f {} +
+
+	# Include skipped tests.
+	pattern='s/\[Fact\(.*\)\]/\[Fact\]/'
+	if [[ "$(uname)" == "Darwin" ]]; then
+		# macOS
+		sed -i '' "$pattern" "$1"/*Tests.cs
+	elif [[ "$(uname)" == "Linux" ]]; then
+		# Linux
+		sed -i "$pattern" "$1"/*Tests.cs
+	fi
+fi
+
 if (( no_test == 0 )); then
-  dotnet test "$basedir" --no-restore
+  dotnet test "$basedir"
 fi
 
 if (( no_lint == 0 )); then
-	if [[ -z "${CI}" ]]; then
-    dotnet format "$basedir" -v n --no-restore
-  else
-    dotnet format "$basedir" -v n --no-restore --verify-no-changes
-  fi
+	if [[ -z "$CI" ]]; then
+		dotnet format "$basedir" -v n
+	else
+    	dotnet format "$basedir" -v n --verify-no-changes
+	fi
 fi

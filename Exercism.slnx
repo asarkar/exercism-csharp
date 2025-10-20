@@ -56,6 +56,9 @@
   <Folder Name="/interest-is-interesting/">
     <Project Path="interest-is-interesting/InterestIsInteresting.csproj" />
   </Folder>
+  <Folder Name="/intergalactic-transmission/">
+    <Project Path="intergalactic-transmission/IntergalacticTransmission.csproj" />
+  </Folder>
   <Folder Name="/international-calling-connoisseur/">
     <Project Path="international-calling-connoisseur/InternationalCallingConnoisseur.csproj" />
   </Folder>
@@ -94,6 +97,9 @@
   </Folder>
   <Folder Name="/red-vs-blue-darwin-style/">
     <Project Path="red-vs-blue-darwin-style/RedVsBlueDarwinStyle.csproj" />
+  </Folder>
+  <Folder Name="/relative-distance/">
+    <Project Path="relative-distance/RelativeDistance.csproj" />
   </Folder>
   <Folder Name="/remote-control-cleanup/">
     <Project Path="remote-control-cleanup/RemoteControlCleanup.csproj" />
