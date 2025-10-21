@@ -52,7 +52,8 @@ internal static class IntergalacticTransmission
         {
             return receivedSeq;
         }
-        var x = n - 1 - ((n - 1) / 9);
+        // We extract a byte from every 14 bits.
+        var x = n * 7 / 8;
         var decoded = new byte[x];
         var buffer = 0;
         var bufferSize = 0;
