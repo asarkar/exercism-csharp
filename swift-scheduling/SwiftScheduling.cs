@@ -3,6 +3,9 @@ using System.Text.RegularExpressions;
 
 internal static class SwiftScheduling
 {
+    private static DateTime AtHour(this DateTime date, int hour) =>
+        date.Date.AddHours(hour);
+
     private static DateTime ToTargetDay(this DateTime datetime, DayOfWeek targetDay)
     {
         DayOfWeek day = datetime.DayOfWeek;
@@ -43,18 +46,12 @@ internal static class SwiftScheduling
         description switch
         {
             "NOW" => meetingStart.AddHours(2),
-            "ASAP" when meetingStart.Hour < 13 =>
-                new DateTime(DateOnly.FromDateTime(meetingStart), new TimeOnly(17, 0)),
-            "ASAP" =>
-                new DateTime(DateOnly.FromDateTime(meetingStart.AddDays(1)), new TimeOnly(13, 0)),
+            "ASAP" when meetingStart.Hour < 13 => meetingStart.AtHour(17),
+            "ASAP" => meetingStart.AddDays(1).AtHour(13),
             "EOW" when meetingStart.DayOfWeek is >= DayOfWeek.Monday and <= DayOfWeek.Wednesday =>
-                new DateTime(
-                    DateOnly.FromDateTime(meetingStart.ToTargetDay(DayOfWeek.Friday)),
-                    new TimeOnly(17, 0)),
+                meetingStart.ToTargetDay(DayOfWeek.Friday).AtHour(17),
             "EOW" when meetingStart.DayOfWeek is DayOfWeek.Thursday or DayOfWeek.Friday =>
-                new DateTime(
-                    DateOnly.FromDateTime(meetingStart.ToTargetDay(DayOfWeek.Sunday)),
-                    new TimeOnly(20, 0)),
+                meetingStart.ToTargetDay(DayOfWeek.Sunday).AtHour(20),
             var s when Regex.Match(s, @"(\d+)M") is Match m && m.Success =>
                 meetingStart.ToTargetMonth(m.Groups[1].Value),
             var s when Regex.Match(s, @"Q(\d+)") is Match m && m.Success =>
