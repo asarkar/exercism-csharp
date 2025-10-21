@@ -48,7 +48,7 @@ basedir="${1:-.}"
 
 if [[ -n "$1" && -z "$CI" ]]; then
 	# Delete project-specific `.editorconfig` files.
-	find "$basedir" -type f -name '.editorconfig' -mindepth 2 -maxdepth 2 -exec rm -f {} +
+	find "$basedir" -type f -name '.editorconfig' -maxdepth 1 -exec rm -f {} +
 
 	# Include skipped tests.
 	pattern='s/\[Fact\(.*\)\]/\[Fact\]/'
