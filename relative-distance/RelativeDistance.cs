@@ -8,17 +8,15 @@ internal sealed class RelativeDistance
         {
             var parent = item.Key;
             var children = item.Value;
-            if (children.Length > 0)
-            {
-                _ = _familyTree.GetOrAddNew(children[0]).Add(parent);
-                _ = _familyTree.GetOrAddNew(parent).Add(children[0]);
-            }
-            for (var i = 1; i < children.Length; i++)
+            for (var i = 0; i < children.Length; i++)
             {
                 _ = _familyTree.GetOrAddNew(children[i]).Add(parent);
                 _ = _familyTree.GetOrAddNew(parent).Add(children[i]);
-                _ = _familyTree.GetOrAddNew(children[i]).Add(children[i - 1]);
-                _ = _familyTree.GetOrAddNew(children[i - 1]).Add(children[i]);
+                for (var j = 0; j < i; j++)
+                {
+                    _ = _familyTree.GetOrAddNew(children[i]).Add(children[j]);
+                    _ = _familyTree.GetOrAddNew(children[j]).Add(children[i]);
+                }
             }
         }
     }
